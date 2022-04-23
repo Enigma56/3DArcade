@@ -25,7 +25,7 @@ public class BehaviorDetection : MonoBehaviour
                 #if UNITY_EDITOR
                     UnityEditor.EditorApplication.isPlaying = false;
                 #endif
-            Application.Quit();
+            //Application.Quit();
             Debug.Log("touched floor!");
         }
     }

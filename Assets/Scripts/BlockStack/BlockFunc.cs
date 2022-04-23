@@ -5,39 +5,41 @@ using UnityEngine;
 
 namespace BlockStack
 {
-    public class MoveBlock : MonoBehaviour
+    public class BlockFunc : MonoBehaviour
     {
-        private float blockSpeed;
-        
+        public float blockSpeed;
+
+        public Camera gameCamera;
         public GameObject parentObject;
-        
-        //private Rigidbody cubeRB;
+
+        private AudioSource collisionSound;
         private SpawnBlock blockUtils;
         
         private Vector3 cubeMovement;
         // Start is called before the first frame update
         void Start()
         {
-            //cubeRB = GetComponent<Rigidbody>();
+            collisionSound = GetComponent<AudioSource>();
             blockUtils = GetComponentInParent<SpawnBlock>();
-
-            blockSpeed = blockUtils.Speed;
+            
             cubeMovement = Vector3.right;
         }
         
         void Update()
         {
-            
             transform.Translate(cubeMovement * Time.deltaTime * blockSpeed);
             
             if(Input.GetKeyDown(KeyCode.Space))
             {
-
-                //generate block and attach it to parent object
                 blockUtils.GenerateBlock(transform.position.x, transform.position.z, parentObject);
 
-                Vector3 newPosition = Vector3.up * blockUtils.PlacementHeight;
-                transform.position = newPosition;
+                Vector3 newBlockPosition = Vector3.up * blockUtils.PlacementHeight;
+                transform.position = newBlockPosition;
+
+                Vector3 newCameraPosition = new Vector3(gameCamera.transform.position.x, gameCamera.transform.position.y + 2, gameCamera.transform.position.z);
+                gameCamera.transform.position = newCameraPosition;
+
+                blockSpeed += .5f;
             }
         }
 
@@ -45,8 +47,7 @@ namespace BlockStack
         void OnCollisionEnter(Collision other)
         {
             cubeMovement = cubeMovement == Vector3.right ? Vector3.left : Vector3.right;
-            
-
+            collisionSound.PlayOneShot(collisionSound.clip);
         }
     }   
 }

@@ -8,7 +8,6 @@ namespace BlockStack
     public class SpawnBlock : MonoBehaviour
     {
         public GameObject stackCube;
-        public float Speed;
         public int StackHeight { get; set; }
         public int PlacementHeight { get; set; }
 
