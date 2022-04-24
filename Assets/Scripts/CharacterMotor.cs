@@ -342,13 +342,13 @@ public class CharacterMotor : MonoBehaviour
 		}
 	
 		if (useFixedUpdate)
-			UpdateFunction ();
+			UpdateFunction();
 	}
 
 	void Update ()
 	{
 		if (!useFixedUpdate)
-			UpdateFunction ();
+			UpdateFunction();
 	}
 
 	private Vector3 ApplyInputVelocityChange (Vector3 velocity)
