@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - SkiBall
   - SpaceShooter
+  - Block
   layers:
   - Default
   - TransparentFX

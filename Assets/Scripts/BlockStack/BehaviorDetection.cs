@@ -8,26 +8,27 @@ namespace BlockStack
 {
 
 
-public class BehaviorDetection : MonoBehaviour
-{
-    private SpawnBlock blockUtils;
-
-    private void Start()
+    public class BehaviorDetection : MonoBehaviour
     {
-        blockUtils = GetComponentInParent<SpawnBlock>();
-    }
+        private SpawnBlock blockUtils;
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (blockUtils.StackHeight == 1) return;
-        if (other.gameObject.CompareTag("Floor"))
+        private void Start()
         {
+            blockUtils = GetComponentInParent<SpawnBlock>();
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Floor") && BlockstackSingleton.Instance.StackHeight >= 2)
+            {
                 #if UNITY_EDITOR
                     UnityEditor.EditorApplication.isPlaying = false;
                 #endif
-            //Application.Quit();
-            Debug.Log("touched floor!");
+                //For final build
+                //Application.Quit();
+            }
+
+            Destroy(GetComponent<Counter>());
         }
     }
-}
 }

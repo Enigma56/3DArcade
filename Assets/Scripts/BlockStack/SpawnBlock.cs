@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace BlockStack
@@ -9,7 +10,7 @@ namespace BlockStack
     {
         public GameObject stackCube;
         public int StackHeight { get; set; }
-        public int PlacementHeight { get; set; }
+        public float PlacementHeight { get; set; }
 
         private void Start()
         {
@@ -17,20 +18,14 @@ namespace BlockStack
             PlacementHeight = 3;
         }
 
-        void Update()
-        {
-        }
-
         public void GenerateBlock(float x, float z, GameObject parent)
         {
-            StackHeight++;
-            PlacementHeight += 2;
-            
+            PlacementHeight += 2f;
             Vector3 position = new Vector3(x, PlacementHeight - 2, z);
             
+            //creates a new block
             Instantiate(stackCube, position, Quaternion.identity, parent.transform);
-
-            Debug.Log(PlacementHeight);
+            
         }
     }
 }
