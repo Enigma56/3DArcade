@@ -19,7 +19,7 @@ namespace BlockStack
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Floor") && BlockstackSingleton.Instance.StackHeight >= 2)
+            if (other.gameObject.CompareTag("Floor") && SingletonBS.Instance.StackHeight >= 2)
             {
                 #if UNITY_EDITOR
                     UnityEditor.EditorApplication.isPlaying = false;

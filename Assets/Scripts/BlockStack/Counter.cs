@@ -1,14 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Counter : MonoBehaviour
+namespace BlockStack
 {
-    // Start is called before the first frame update
-    private void OnCollisionEnter(Collision other)
+    public class Counter : MonoBehaviour
     {
-        if (other.gameObject.CompareTag("Block") || BlockstackSingleton.Instance.StackHeight == 0)
-            BlockstackSingleton.Instance.IncreaseStackHeight();
+        // Start is called before the first frame update
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Block") || SingletonBS.Instance.StackHeight == 0)
+                SingletonBS.Instance.IncreaseStackHeight();
+        }
     }
 }

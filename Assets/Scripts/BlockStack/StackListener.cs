@@ -11,7 +11,7 @@ namespace BlockStack
         protected override void Update()
         {
             base.Update();
-            BlockstackSingleton.Instance.IncreaseScore();
+            SingletonBS.Instance.IncreaseScore();
         }
     }   
 }

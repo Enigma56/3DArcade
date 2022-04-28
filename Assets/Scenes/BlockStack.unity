@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d33371627d9196499eb67b0759707a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCamera: {fileID: 882431304}
   HeightText: {fileID: 1708147045}
 --- !u!1 &1708147043
 GameObject:
