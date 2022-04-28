@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 namespace BlockStack
 {
@@ -35,7 +36,7 @@ namespace BlockStack
             {
                 blockUtils.GenerateBlock(transform.position.x, transform.position.z, parentObject);
 
-                Vector3 newBlockPosition = Vector3.up * blockUtils.PlacementHeight;
+                Vector3 newBlockPosition = new Vector3(1  * UnityEngine.Random.Range(-6,6),1 * blockUtils.PlacementHeight,0);
                 transform.position = newBlockPosition;
                 
                 SingletonBS.Instance.MoveCamera();
