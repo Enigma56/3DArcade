@@ -887,7 +887,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_text
-      value: Unnamed
+      value: Block Stack
       objectReference: {fileID: 0}
     - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_Name
@@ -1004,6 +1004,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_Name
+      value: Pong
+      objectReference: {fileID: 0}
+    - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
+      propertyPath: m_TagString
       value: Pong
       objectReference: {fileID: 0}
     - target: {fileID: 5608165218469679688, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}

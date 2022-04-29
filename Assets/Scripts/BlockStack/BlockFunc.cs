@@ -9,8 +9,7 @@ namespace BlockStack
     public class BlockFunc : MonoBehaviour
     {
         public float blockSpeed;
-
-        public Camera gameCamera;
+        
         public GameObject parentObject;
 
         private AudioSource collisionSound;

@@ -9,6 +9,9 @@ TagManager:
   - SkiBall
   - SpaceShooter
   - Block
+  - Paddle1
+  - Paddle2
+  - Pong
   layers:
   - Default
   - TransparentFX

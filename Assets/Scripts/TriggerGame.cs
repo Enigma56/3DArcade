@@ -31,6 +31,10 @@ public class TriggerGame : MonoBehaviour
             case "SpaceShooter":
                 Debug.Log("galaga loaded!");
                 break;
+            case "Pong":
+                SceneManager.LoadScene("Pong");
+                Debug.Log("pong loaded!");
+                break;
             
         }
         //Debug.Log("start game!");
