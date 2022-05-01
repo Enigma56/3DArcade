@@ -1,25 +1,63 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MoveBall : MonoBehaviour
 {
-    public float ballSpeed;
+    public float currentBallSpeed;
+    private float initialBallSpeed;
     // Start is called before the first frame update
-    private Vector3 ballMovement;
-    void Start()
+    private Rigidbody ballRB;
+    private Vector3 startingLocation;
+    void Awake()
     {
-        ballMovement = Vector3.right;
+        ballRB = GetComponent<Rigidbody>();
+        startingLocation = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        transform.Translate(ballMovement * Time.deltaTime * ballSpeed);
+        initialBallSpeed = currentBallSpeed;
+        AddStartingForce();
     }
-    
-    void OnCollisionEnter(Collision other)
+
+    private void AddStartingForce()
     {
-        ballMovement = ballMovement == Vector3.right ? Vector3.left : Vector3.right;
+        float x = Random.value < 0.5f ? -1.0f : 1.0f;
+        float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) :
+                                        Random.Range(0.5f, 1.0f);
+        
+        ballRB.AddForce(new Vector3(x,y,0) * currentBallSpeed);
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Paddle1") || other.gameObject.CompareTag("Paddle2"))
+            ballRB.velocity *= 1.5f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ScoreLeft"))
+        {
+            SingletonPong.Instance.playerTwoScore++;
+            SingletonPong.Instance.playerTwoScoreText.text = SingletonPong.Instance.playerTwoScore.ToString();
+            
+            Debug.Log("player 2 scores!!");    
+        }
+        else if(other.gameObject.CompareTag("ScoreRight"))
+        {
+            SingletonPong.Instance.playerOneScore++;
+            SingletonPong.Instance.playerOneScoreText.text = SingletonPong.Instance.playerOneScore.ToString();
+            Debug.Log("player 1 scores!!");    
+        }
+
+        ballRB.velocity = Vector3.zero;
+        transform.position = startingLocation;
+        currentBallSpeed = initialBallSpeed;
+        AddStartingForce();
     }
 }

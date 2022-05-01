@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,7 @@ public class MovePlayerPad : MonoBehaviour
 
     void movePaddles()
     {
-        //float translationAxis = Input.GetAxis("Vertical");
-        
+        //check to see if each paddle is constrained by game bounds
         if (gameObject.tag.Equals("Paddle1"))
         {
             if (Input.GetKey(KeyCode.W))
@@ -40,7 +40,10 @@ public class MovePlayerPad : MonoBehaviour
                 transform.Translate(0, -paddleSpeed * Time.deltaTime, 0);
             }
         }
+    }
 
-        
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("collided!");
     }
 }

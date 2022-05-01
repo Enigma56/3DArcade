@@ -9,7 +9,6 @@ namespace Pong
         protected override void Update()
         {
             base.Update();
-            Debug.Log("Pong listening!");
         }
         
     }   
