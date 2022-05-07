@@ -573,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_TagString
-      value: SpaceShooter
+      value: CoinDozer
       objectReference: {fileID: 0}
     - target: {fileID: 5608165218469679688, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_RootOrder
@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_TagString
-      value: SkiBall
+      value: Asteroids
       objectReference: {fileID: 0}
     - target: {fileID: 5608165218469679688, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_RootOrder
@@ -1013,6 +1013,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_Name
+      value: Pong
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
+      propertyPath: m_TagString
       value: Pong
       objectReference: {fileID: 0}
     - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}

@@ -6,8 +6,6 @@ TagManager:
   tags:
   - BlockStack
   - Floor
-  - SkiBall
-  - SpaceShooter
   - Block
   - Paddle1
   - Paddle2
@@ -18,6 +16,8 @@ TagManager:
   - ScoreRight
   - PongBall
   - BlockWall
+  - Asteroids
+  - CoinDozer
   layers:
   - Default
   - TransparentFX
