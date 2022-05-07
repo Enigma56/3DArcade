@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 namespace BlockStack
 {
-
-
     public class BehaviorDetection : MonoBehaviour
     {
         private SpawnBlock blockUtils;
@@ -27,8 +25,13 @@ namespace BlockStack
                 //For final build
                 //Application.Quit();
             }
-
             Destroy(GetComponent<Counter>());
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            SingletonBS.Instance.ScaleWallHeight();
+            Debug.Log("Increase the wall height here!");
         }
     }
 }

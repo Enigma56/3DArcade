@@ -16,6 +16,8 @@ TagManager:
   - BottomBoundPong
   - ScoreLeft
   - ScoreRight
+  - PongBall
+  - BlockWall
   layers:
   - Default
   - TransparentFX

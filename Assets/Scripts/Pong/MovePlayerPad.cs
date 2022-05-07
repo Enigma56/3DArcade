@@ -6,7 +6,16 @@ using UnityEngine;
 public class MovePlayerPad : MonoBehaviour
 {
     public float paddleSpeed;
-    // Update is called once per frame
+
+    private bool isCollidingAtTop;
+    private bool isCollidingAtBottom;
+
+    private void Start()
+    {
+        isCollidingAtTop = false;
+        isCollidingAtTop = false;
+    }
+
     void Update()
     {
         movePaddles();
@@ -14,28 +23,28 @@ public class MovePlayerPad : MonoBehaviour
 
     void movePaddles()
     {
-        //check to see if each paddle is constrained by game bounds
         if (gameObject.tag.Equals("Paddle1"))
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && !isCollidingAtTop)
             {
                 transform.Translate(0,  paddleSpeed * Time.deltaTime, 0);
             }
             
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S) && !isCollidingAtBottom)
             {
                 transform.Translate(0, -paddleSpeed * Time.deltaTime, 0);
             }
+           
         }
         
         if (gameObject.tag.Equals("Paddle2"))
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) && !isCollidingAtTop)
             {
                 transform.Translate(0,  paddleSpeed * Time.deltaTime, 0);
             }
             
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow) && !isCollidingAtBottom)
             {
                 transform.Translate(0, -paddleSpeed * Time.deltaTime, 0);
             }
@@ -44,6 +53,22 @@ public class MovePlayerPad : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("collided!");
+        if (other.gameObject.CompareTag("TopBoundPong"))
+        {
+            isCollidingAtTop = true;
+            isCollidingAtBottom = false;
+        }
+        
+        else if (other.gameObject.CompareTag("BottomBoundPong"))
+        {
+            isCollidingAtTop = false;
+            isCollidingAtBottom = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        isCollidingAtTop = false;
+        isCollidingAtBottom = false;
     }
 }

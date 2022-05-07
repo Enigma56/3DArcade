@@ -8,6 +8,9 @@ namespace BlockStack
     public class SingletonBS : MonoBehaviour
     {
         public static SingletonBS Instance { get; private set; }
+
+        public GameObject BlockwallOne;
+        public GameObject BlockwallTwo;
         public int StackHeight { get; private set; }
     
         public Camera gameCamera;
@@ -69,6 +72,12 @@ namespace BlockStack
         public void IncreaseStackHeight()
         {
             StackHeight++;
+        }
+
+        public void ScaleWallHeight()
+        {
+            BlockwallOne.transform.localScale = new Vector3(BlockwallOne.transform.localScale.x, BlockwallOne.transform.localScale.y, BlockwallOne.transform.localScale.z * 2);
+            BlockwallTwo.transform.localScale = new Vector3(BlockwallTwo.transform.localScale.x, BlockwallTwo.transform.localScale.y, BlockwallTwo.transform.localScale.z * 2);
         }
 
         public void IncreaseScore()

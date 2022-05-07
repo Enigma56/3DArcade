@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e92e42aa00db72b428dd8fb52226d57a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.15751454, g: 0.18537036, b: 0.20845303, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -553,11 +553,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_text
-      value: Space Shooter
+      value: Coin Dozer - WIP
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
+      propertyPath: m_margin.x
+      value: -2.8585434
       objectReference: {fileID: 0}
     - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_margin.z
-      value: -4.902529
+      value: -5.898039
       objectReference: {fileID: 0}
     - target: {fileID: 4357573236742340727, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -565,7 +569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_Name
-      value: SpaceShooter
+      value: CoinDozer
       objectReference: {fileID: 0}
     - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_TagString
@@ -807,21 +811,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_text
-      value: 'Ski Ball
+      value: 'Asteroids - WIP
+
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
+      propertyPath: m_margin.x
+      value: -1.0033913
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031508586344459442, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_margin.z
-      value: 5.887086
+      value: -5.143541
       objectReference: {fileID: 0}
     - target: {fileID: 4357573236742340727, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.85
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 5089036934641502450, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_Name
-      value: SkiBall
+      value: Asteroids
       objectReference: {fileID: 0}
     - target: {fileID: 5358876672652226692, guid: 073451871343cbf4ba671ac5b2c9c559, type: 3}
       propertyPath: m_TagString
