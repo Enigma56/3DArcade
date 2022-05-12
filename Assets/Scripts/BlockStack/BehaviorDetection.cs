@@ -17,13 +17,15 @@ namespace BlockStack
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Floor") && SingletonBS.Instance.StackHeight >= 2)
+            Debug.Log(other.gameObject.tag);
+            if (other.gameObject.CompareTag("Floor") && SingletonBS.Instance.StackHeight > 0)
             {
                 #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
+                    //UnityEditor.EditorApplication.isPlaying = false;
+                    SceneManager.LoadScene("Lobby");
                 #endif
-                //For final build
-                //Application.Quit();
+                    //For final build
+                    //Application.Quit();
             }
             Destroy(GetComponent<Counter>());
         }

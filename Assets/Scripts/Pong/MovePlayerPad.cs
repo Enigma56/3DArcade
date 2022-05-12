@@ -68,6 +68,8 @@ public class MovePlayerPad : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
+        if (other.gameObject.CompareTag("PongBall"))
+            return;
         isCollidingAtTop = false;
         isCollidingAtBottom = false;
     }

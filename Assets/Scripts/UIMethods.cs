@@ -18,24 +18,17 @@ public class UIMethods : MonoBehaviour
     {
         uiCanvas = GetComponentInChildren<Canvas>();
         uiCanvas.enabled = false;
-        
-        Debug.Log("UI awake!");
     }
 
     public void Exit()
     {
-        #if UNITY_EDITOR
-        
-            if(SceneManager.GetActiveScene().name == "Lobby")
-                UnityEditor.EditorApplication.isPlaying = false;
-            else
-            {
-                Debug.Log("loaded lobby!");
-                SceneManager.LoadScene("Lobby");
-            }
-        #endif
-        
-        Application.Quit();
+        if(SceneManager.GetActiveScene().name == "Lobby")
+                Application.Quit();
+        else
+        {
+            SceneManager.LoadScene("Lobby");
+            Time.timeScale = 1;
+        }
     }
 
     public void DisplayUI()

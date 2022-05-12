@@ -24,7 +24,6 @@ namespace BlockStack
             blockUtils = GetComponentInParent<SpawnBlock>();
 
             cubeMovement = Vector3.right;
-            
         }
 
         void Update()
@@ -47,7 +46,8 @@ namespace BlockStack
         void OnCollisionEnter(Collision other)
         {
             cubeMovement = cubeMovement == Vector3.right ? Vector3.left : Vector3.right;
-            collisionSound.PlayOneShot(collisionSound.clip);
+            if (other.gameObject.CompareTag("BlockWall"))
+                collisionSound.PlayOneShot(collisionSound.clip);
         }
     }
 }

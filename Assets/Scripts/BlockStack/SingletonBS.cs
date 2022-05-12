@@ -55,7 +55,7 @@ namespace BlockStack
             
             float timeElapsed = 0f;
             Vector3 newCameraPosition = new Vector3(gameCamera.transform.position.x,
-                gameCamera.transform.position.y + 2, gameCamera.transform.position.z);
+                gameCamera.transform.position.y + 1.5f, gameCamera.transform.position.z);
 
             while (timeElapsed < duration)
             {

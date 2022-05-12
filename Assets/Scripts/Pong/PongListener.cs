@@ -9,7 +9,7 @@ namespace Pong
         protected override void Update()
         {
             base.Update();
+            //Include listener for final score
         }
-        
     }   
 }

@@ -359,6 +359,7 @@ public class CharacterMotor : MonoBehaviour
 		// Find desired velocity
 		Vector3 desiredVelocity;
 		if (grounded && TooSteep ()) {
+			Debug.Log("moving!");
 			// The direction we're sliding in
 			desiredVelocity = new Vector3 (groundNormal.x, 0, groundNormal.z).normalized;
 			// Find the input movement direction projected onto the sliding direction

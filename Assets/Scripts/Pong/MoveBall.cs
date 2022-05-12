@@ -36,7 +36,7 @@ public class MoveBall : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Paddle1") || other.gameObject.CompareTag("Paddle2"))
-            ballRB.velocity *= 1.25f;
+            ballRB.velocity *= 1.1f;
     }
 
     private void OnTriggerEnter(Collider other)
